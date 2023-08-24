@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const noteRoutes = require('./routes/noteRoutes');
 const app = express();
+require('dotenv').config();
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://hugo:iETOkNEGBUnVw4zi@cluster0.hvf9n0s.mongodb.net/?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -21,7 +22,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
