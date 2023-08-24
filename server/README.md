@@ -73,7 +73,7 @@ Pour tester l'API depuis une autre machine :
 
 ### 2. Connexion
 
-- **URL** : `/signup`
+- **URL** : `/signin`
 - **Méthode** : `POST`
 - **Données du corps de la requête** :
   ```json
